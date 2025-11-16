@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+
+<!-- FIX LỖI LỆCH TRONG MESSENGER + GOOGLE APP -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>💖 Bé cưới tui nhé? 💖</title>
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* KHÓA MESSENGER / GOOGLE WEBVIEW ÉP ZOOM */
+html, body {
+  width: 100%;
+  height: 100%;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+  background: linear-gradient(135deg,#ffb6c1,#fff0f5);
+  font-family:"Segoe UI", cursive;
+  color:#e91e63;
+}
+
+/* MÀN HÌNH 1 GIỮA CHUẨN */
+.screen1 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* KHUNG TRÒN SLIDESHOW */
+#slideshow {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:0 0 20px rgba(255,182,193,0.8);
+  position: relative;
+
+  /* FIX LỆCH TRONG MESSENGER / GOOGLE */
+  transform: translateZ(0);
+}
+
+#slideshow img {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.2s;
+}
+
+#slideshow img.active { opacity:1; }
+
+h1 {
+  margin-top: 25px;
+  font-size: 2em;
+  text-shadow: 0 0 8px white;
+}
+
+/* BUTTON WRAP */
+.button-wrap {
+  margin-top: 15px;
+  width: 200px;
+  height: 50px;
+  position: relative;
+  display:flex;
+  justify-content:center;
+}
+
+button {
+  background-color:#ff69b4;
+  color:white;
+  padding:12px 25px;
+  font-size:1.1em;
+  border-radius:25px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 0 10px #ffb6c1;
+  margin:0 5px;
+}
+
+#noBtn { position:absolute; }
+
+/* ============================================
+   TIM BAY
+============================================ */
+.heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.8); opacity: 0; }
+}
+
+/* ============================================
+   MÀN HÌNH 2
+============================================ */
+#surpriseScreen {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg,#ffe0eb,#fff0f7);
+  padding: 30px 0 50px 0;
+}
+
+/* GALLERY */
+#gallery {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow:0 0 15px #ffb6c1;
+}
+
+#gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+
+#gallery img.active { opacity:1; }
+
+/* WISH BOX */
+#wishBox {
+  width: 85%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px auto 0 auto;
+  color:#e91e63;
+  box-shadow:0 0 15px #ffc0d3;
+  white-space:pre-wrap;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================== MÀN HÌNH 1 ===================== -->
+<div class="screen1">
+
+  <div id="slideshow">
+    <img src="09b3634f-3528-4b7f-8b14-4c8b75df9d11.jpg" class="active">
+    <img src="20d10877-7b41-4d70-9921-a34baf6fa3b3.jpg">
+    <img src="655d7fa6-2662-47e4-a809-2ce6c2cef756.jpg">
+    <img src="9b62cd67-6494-4b1e-861e-afea79281ad6.jpg">
+  </div>
+
+  <h1>Bé cưới tui nhé? 💖</h1>
+
+  <div class="button-wrap">
+    <button id="yesBtn">Dạ:3 💍</button>
+    <button id="noBtn">hog 😅</button>
+  </div>
+
+</div>
+
+<!-- ===================== MÀN HÌNH 2 ===================== -->
+<div id="surpriseScreen">
+
+  <div id="gallery">
+    <img src="a773b4b9-e012-465b-876d-8b850ae62647.jpg" class="active">
+    <img src="bc45c61b-20d4-4ca4-87c6-c24a9a17293d.jpg">
+    <img src="e5212d85-668f-4fb6-bf64-df931b159fb1.jpg">
+    <img src="fd333211-a712-4d36-8911-8b67417667f9.jpg">
+  </div>
+
+  <div id="wishBox">
+Vậy là đã gần 6 tháng mình quen nhau rùi ha.
+Thời gian qua tui vs Thư đã có biết bao nhiêu là kỷ niệm đẹp,
+vui cũng có mà cãi nhau cũng không ít.
+
+Với tui thì quãng thời gian ấy thật sự rất hạnh phúc và ý nghĩa.
+
+Bé Thư cũng đã đồng ý cưới tui rùi.
+Tui hứa tui sẽ không chỉ là 1 kỷ niệm đẹp trong ký ức của Thư,
+mà sẽ là mảnh ghép của cuộc đời Thư đang tìm kiếm.
+
+Tui thương bé Thư nhìu lắm 💖
+  </div>
+
+</div>
+
+<script>
+/* SLIDESHOW MÀN 1 */
+const slides = document.querySelectorAll('#slideshow img');
+let idx = 0;
+setInterval(()=>{
+  slides[idx].classList.remove('active');
+  idx = (idx + 1) % slides.length;
+  slides[idx].classList.add('active');
+},3500);
+
+/* TIM BAY */
+function createHeart(){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.textContent='💖';
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(Math.random()*20+15)+'px';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+}
+setInterval(createHeart,300);
+
+/* NÚT HOG */
+const no = document.getElementById('noBtn');
+function moveNo(){
+  const x=Math.random()*(window.innerWidth-130);
+  const y=Math.random()*(window.innerHeight-80);
+  no.style.left=x+'px';
+  no.style.top=y+'px';
+}
+no.addEventListener('mouseover', moveNo);
+no.addEventListener('touchstart', moveNo);
+
+/* NÚT ĐỒNG Ý */
+document.getElementById('yesBtn').onclick = () => {
+  document.querySelector('.screen1').style.display='none';
+  document.getElementById('surpriseScreen').style.display='block';
+};
+
+/* SLIDESHOW MÀN 2 */
+const gal = document.querySelectorAll('#gallery img');
+let g = 0;
+setInterval(()=>{
+  gal[g].classList.remove('active');
+  g = (g+1)%gal.length;
+  gal[g].classList.add('active');
+},4000);
+</script>
+
+</body>
+</html>
